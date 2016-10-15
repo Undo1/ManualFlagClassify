@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014184057) do
+ActiveRecord::Schema.define(version: 20161014191423) do
+
+  create_table "flag_classes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "color"
+  end
 
   create_table "flags", force: :cascade do |t|
     t.boolean  "result"
@@ -18,6 +25,8 @@ ActiveRecord::Schema.define(version: 20161014184057) do
     t.string   "flag_text"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "flag_class_id"
+    t.index ["flag_class_id"], name: "index_flags_on_flag_class_id"
   end
 
 end

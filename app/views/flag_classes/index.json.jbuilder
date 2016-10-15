@@ -1,0 +1,1 @@
+json.array! @flag_classes, partial: 'flag_classes/flag_class', as: :flag_class

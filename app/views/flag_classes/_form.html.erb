@@ -1,0 +1,27 @@
+<%= form_for(flag_class) do |f| %>
+  <% if flag_class.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(flag_class.errors.count, "error") %> prohibited this flag_class from being saved:</h2>
+
+      <ul>
+      <% flag_class.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Flag Classes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @flag_classes.each do |flag_class| %>
+      <tr>
+        <td><%= flag_class.name %></td>
+        <td><%= link_to 'Show', flag_class %></td>
+        <td><%= link_to 'Edit', edit_flag_class_path(flag_class) %></td>
+        <td><%= link_to 'Destroy', flag_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Flag Class', new_flag_class_path %>

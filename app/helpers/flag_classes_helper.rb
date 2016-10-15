@@ -1,0 +1,2 @@
+module FlagClassesHelper
+end

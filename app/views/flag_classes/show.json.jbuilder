@@ -1,0 +1,1 @@
+json.partial! "flag_classes/flag_class", flag_class: @flag_class

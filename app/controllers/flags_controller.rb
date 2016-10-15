@@ -20,7 +20,8 @@ class FlagsController < ApplicationController
   # GET /flags
   # GET /flags.json
   def index
-    @flags = Flag.all
+    @flags = Flag.where(:flag_class_id => nil).where("flag_text LIKE '%search%'")
+    @flag_classes = FlagClass.all
   end
 
   # GET /flags/1
